@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:LeNombreMagiqueApp.Views"
+             Title="Jeu : Le Nombre Magique"
+             x:Class="LeNombreMagiqueApp.Views.GamePage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <views:StarsView Grid.Row="0" Grid.Column="0"/>
+            <BoxView Grid.Row="2" Grid.Column="0" Rotation="-10" Margin="-20,0,-20,-30" HeightRequest="150" Color="{StaticResource shadowColor}"/>
+            
+            <StackLayout Grid.Row="1" Grid.Column="0" VerticalOptions="Center">
+                <Label Text="Le Nombre Magique" HorizontalTextAlignment="Center" Margin="0,12" FontSize="36" TextColor="{StaticResource titleColor}" FontAttributes="Bold"/>
+                <Label x:Name="minMaxLabel" Text="Entrez un nombre entre x et y"  HorizontalTextAlignment="Center" Margin="0,12" FontSize="20" TextColor="{StaticResource titleColor}" FontAttributes="Italic"/>
+                <Entry x:Name="numberEntry" Keyboard="Numeric" Placeholder="?" PlaceholderColor="White" TextColor="White" InputTransparent="False" HorizontalTextAlignment="Center" Margin="0,12" HeightRequest="200"
+                HorizontalOptions="Center" WidthRequest="200" FontSize="100" BackgroundColor="{StaticResource shadowColor}"/>
+                <Button Text="DEVINEZ" BackgroundColor="{StaticResource shadowColor}" TextColor="White" Margin="0,12" HorizontalOptions="Center" WidthRequest="200" CornerRadius="7" FontSize="20" CharacterSpacing="2"
+                FontAttributes="Bold" Clicked="ButtonDevinerClicked"/>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
